@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import HelloWorld from './components/hello-world';
-import { predict } from './api';
+// import { predict } from './api';
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +67,6 @@ class App extends Component {
 
   handlePredict = () => {
     // eslint-disable-next-line no-console
-    console.log(this.state);
     const arr = [
       this.state.age,
       this.state.education,
@@ -76,7 +75,8 @@ class App extends Component {
       this.state.race,
       this.state.sex,
     ];
-    predict(arr);
+    console.log(arr);
+    // predict(arr);
   };
 
   render() {
