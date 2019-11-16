@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import HelloWorld from './components/hello-world';
-// import { predict } from './api';
+import { postData } from './api';
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +20,8 @@ class App extends Component {
       race: '',
       // eslint-disable-next-line react/no-unused-state
       sex: '',
+      // eslint-disable-next-line react/no-unused-state
+      result: '',
     };
   }
 
@@ -75,8 +77,13 @@ class App extends Component {
       this.state.race,
       this.state.sex,
     ];
+    // eslint-disable-next-line no-console
     console.log(arr);
-    // predict(arr);
+    const result = postData(arr);
+    // eslint-disable-next-line no-console
+    console.log(result);
+    // eslint-disable-next-line react/no-unused-state
+    // this.setState({ result: result });
   };
 
   render() {
